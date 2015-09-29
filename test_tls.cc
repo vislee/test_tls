@@ -13,6 +13,9 @@
 
 #define MAXBUF 1024
 using namespace std;
+
+//http://blog.csdn.net/net_wolf_007/article/details/3194543
+
 int main(int argc, char **argv)
 {
     if (argc < 3) {
@@ -78,6 +81,7 @@ int main(int argc, char **argv)
         return 3;
     }
     // 设置检测的项
+    //http://osxr.org/openssl/source/crypto/x509/x509_vfy.h#0362
     X509_STORE_set_flags (cert_store, X509_V_FLAG_IGNORE_CRITICAL|X509_V_FLAG_ALLOW_PROXY_CERTS);
     lookup=X509_STORE_add_lookup(cert_store, X509_LOOKUP_file());
     if (lookup == NULL) {
