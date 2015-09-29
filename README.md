@@ -4,7 +4,7 @@
 
 + apns push服务出问题
 
-```
+```cpp
 
 while((con_ret=SSL_do_handshake(ssl))!=1) {
     if(con_ret==1) {
@@ -43,7 +43,7 @@ while((con_ret=SSL_do_handshake(ssl))!=1) {
 最近，当证书过期后，一直返回： `SSL_ERROR_SYSCALL, 0 5 0 0`
 
 
-+ 用该命令`openssl x509 -text -in roch.pem` 查看了证书，证书过期了。 * 最近有个怪异的现象，过期的证书有时候是可以握手成功的。以前上述代码可以判断证书过期的。会输出 `ALERT_CERTIFICATE` *
++ 用该命令`openssl x509 -text -in roch.pem` 查看了证书，证书过期了。* 最近有个怪异的现象，过期的证书有时候是可以握手成功的。以前上述代码可以判断证书过期的。会输出 `ALERT_CERTIFICATE`*
 
 
 + 写了个简单的测试文件，用过期的证书测试，每次都报 `SSL_ERROR_SYSCALL, 0 5 0 0`.
